@@ -44,10 +44,10 @@ switch(cnt) {
         rank = "1등";
         break;
     case 5:
-        rank = "2등";
+        rank = bonus ? "3등" : "2등";
         break;
     case 4:
-        rank = bonus ? "3등" : "4등";
+        rank = "4등";
         break;
     case 3:
         rank = "5등";
@@ -57,3 +57,4 @@ switch(cnt) {
         break;
 }
 document.write("<br>" + rank + " 입니다.");
+
