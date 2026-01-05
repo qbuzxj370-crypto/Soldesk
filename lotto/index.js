@@ -36,20 +36,18 @@ for(let i = 0; i < users.length; i++) {
     }
 }
 if(users.includes(bonusNumber)) {
-    cnt++;
     bonus = true;
 }
 let rank = "";
 switch(cnt) {
-    case 7:
     case 6:
         rank = "1등";
         break;
     case 5:
-        rank = bonus ? "3등" : "2등";
+        rank = "2등";
         break;
     case 4:
-        rank = "4등";
+        rank = bonus ? "3등" : "4등";
         break;
     case 3:
         rank = "5등";
