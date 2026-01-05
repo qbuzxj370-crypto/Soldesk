@@ -1,0 +1,38 @@
+img {
+    width: 100px;
+}
+
+
+#board {
+    display: flex;
+    width: 40vw;
+    text-align:center;
+}
+
+div {
+    margin: 5px;
+    padding: 5px;
+    border: solid 5px gold;
+}
+
+#board>div {
+    flex: 40%;
+}
+
+#computer, #user {
+    border: none;
+}
+
+#vs {
+    border: none;
+    flex: 20%;
+    align-items: center;
+}
+
+#computer>img {
+  transform: scaleX(-1); /* 좌우 반전 */
+}
+
+#result {
+    
+}

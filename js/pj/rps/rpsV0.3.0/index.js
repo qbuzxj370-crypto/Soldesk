@@ -1,0 +1,28 @@
+let list = ["가위", "바위", "보"];
+let inputText, input, uidx = -1;
+
+window.onload = function () {
+    inputText = document.getElementById("input");
+}
+
+function run() {
+    input = inputText.value;
+    uidx = list.indexOf(input);
+    if (uidx == -1) {
+        alert("잘못된 입력입니다. 다시 입력해주세요.");
+        return;
+    }
+    
+    let cidx = Math.floor(Math.random() * 3);
+
+    let s = `사용자 : ${input} vs pc : ${list[cidx]} -> `;
+    if (uidx === cidx) {
+        s += "무승부입니다.";
+    } else if ((uidx - cidx + 3) % 3 == 1) {
+        s += "승리했습니다.";
+    } else {
+        s += "패배했습니다.";
+    }
+
+    document.getElementById("result").innerText = s;
+}

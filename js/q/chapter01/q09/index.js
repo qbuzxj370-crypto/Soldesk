@@ -1,0 +1,1 @@
+document.write("<img src='../img/dice/dice_" + (Math.floor(Math.random() * 6) + 1) + ".png'>");
