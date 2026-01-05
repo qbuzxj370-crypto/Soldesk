@@ -29,14 +29,10 @@ document.write("<br>보너스 번호 : " + bonusNumber);
 document.write("<br>추첨용지 : " + users);
 
 let cnt = 0;
-let bonus = false;
 for(let i = 0; i < users.length; i++) {
     if(numbers.includes(users[i])) {
         cnt++;
     }
-}
-if(users.includes(bonusNumber)) {
-    bonus = true;
 }
 let rank = "";
 switch(cnt) {
@@ -44,7 +40,7 @@ switch(cnt) {
         rank = "1등";
         break;
     case 5:
-        rank = bonus ? "2등" : "3등";
+        rank = users.includes(bonusNumber) ? "2등" : "3등";
         break;
     case 4:
         rank = "4등";
@@ -57,5 +53,3 @@ switch(cnt) {
         break;
 }
 document.write("<br>" + rank + " 입니다.");
-
-
