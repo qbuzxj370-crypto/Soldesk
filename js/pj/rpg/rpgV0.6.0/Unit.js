@@ -1,27 +1,31 @@
+function printText(str, classStr) {
+    let div = document.createElement("div");
+    div.className = classStr;
+    div.innerHTML = `<p>${str}</p>`;
+    document.getElementById("gameboard").appendChild(div);
+}
+
 class Unit {
     constructor(name, max_hp, attack) {
         this.name = name;
         this.max_hp = max_hp;
         this.hp = max_hp;
         this.attack = attack;
-        this.board = document.getElementById("gameboard");
+    }
+
+    returnHP() {
+        return `(${this.hp}/${this.max_hp})`;
     }
 
     info() {
-        this.addValue(`[${this.name} (${this.hp}/${this.max_hp})]`);
+        printText(`[${this.name} (${this.returnHP()})]`, this.name);
     }
 
     damage(enermy) {
         let damage = Math.floor(Math.random() * this.attack) + 1;
-        this.addValue(`${this.name}이(가) ${enermy}에게 ${damage}의 데미지를 입혔습니다.`);
+        enermy.hp -= damage;
+        printText(`${this.name}이(가) ${enermy.name}에게 ${damage}의 데미지를 입혔습니다. ${enermy.name}의 HP: ${enermy.returnHP()}`, this.name);
         return damage;
-    }
-
-    addValue(str) {
-        let div = document.createElement("div");
-        div.className = this.name;
-        div.innerHTML = `<p>${str}</p>`;
-        this.board.appendChild(div);
     }
 }
 
@@ -39,7 +43,7 @@ class Person extends Unit {
 
 class Characters {
     constructor() {
-        this.characterArray = [];
+        this.arr = [];
     }
 
     addCharacter(Character) {
@@ -47,12 +51,29 @@ class Characters {
             throw new Error("Character는 Unit을 상속받은 객체여야 합니다.");
         }
 
-        this.characterArray.push(Character);
+        this.arr.push(Character);
     }
 
     printCharacters() {
-        for (let i = 0; i < this.characterArray.length; i++) {
-            this.characterArray[i].info();
+        for (let i = 0; i < this.arr.length; i++) {
+            this.arr[i].info();
+        }
+    }
+
+    battle() {
+        if(this.arr.length < 2) {
+            throw new Error("전투를 위해서는 최소 2명의 캐릭터가 필요합니다.");
+        }
+        printText("<hr>전투 시작<hr>");
+        while(this.arr[0].hp > 0 && this.arr[1].hp > 0) {
+            this.arr[1].damage(this.arr[0]);
+            this.arr[0].damage(this.arr[1]);
+        }
+        if(this.arr[0].hp <= 0) {
+            printText(`${this.arr[0].name}이(가) 패배했습니다.`, 'battleResult');
+        }
+        if(this.arr[1].hp <= 0) {
+            printText(`${this.arr[1].name}이(가) 패배했습니다.`, 'battleResult');
         }
     }
 }

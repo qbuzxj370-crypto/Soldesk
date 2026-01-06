@@ -1,0 +1,33 @@
+#top {
+    display: flex;
+    height: 200px;
+}
+#top>#left {
+    width: 25%;
+    background-color: red;
+}
+
+#top>#right {
+    width: 75%;
+    background-color: orange;
+}
+
+#mid {
+    display: flex;
+    height: 100px;
+    background-color: yellow;
+}
+
+#bot {
+    display: flex;
+    height: 600px;
+}
+
+#bot_left {
+    width: 25%;
+    background-color: green;
+}
+#bot_right {
+    width: 75%;
+    background-color: blue;
+}

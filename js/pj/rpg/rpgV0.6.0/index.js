@@ -9,13 +9,7 @@ window.onload = function() {
 
     characters.printCharacters();
 
-    let board = document.getElementById("gameboard");
-    let div = document.createElement("div");
-    div.innerHTML = "<hr>전투 시작<hr>";
-    board.appendChild(div);
-
-    orc.hp -= elf.damage(orc.name);
-    elf.hp -= orc.damage(elf.name);
+    characters.battle();
 
     characters.printCharacters();
 }

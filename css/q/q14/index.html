@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="myLayout">
+        <div id="top">
+            <div id="top_left">
+                <img id="logo" src="cat.jpg">
+                <p id="homepage_name">동물 이미지 갤러리</p>
+            </div>
+            <div id="top_banner">
+                <img id="banner" src="banner_635x120.jpg">
+            </div>
+        </div>
+        <div id="nav">
+            <div id="nav_content">
+                <a href="#">개</a>
+                &nbsp;|&nbsp;
+                <a href="#">고양이</a>
+                &nbsp;|&nbsp;
+                <a href="#">토끼</a>
+            </div>
+        </div>
+        <div id="mid">
+            <div id="mid_left">
+                <div id="login">
+                    <form>
+                        <input id="login_id" type="text" placeholder="아이디" maxlength="10" minlength="4">
+                        <input id="login_pw" type="password" placeholder="비밀번호" maxlength="10" minlength="4">
+                        <br>
+                        <input type="submit" value="로그인">
+                        <input type="button" value="회원가입">
+                    </form>
+                </div>
+                <div id="board" class="board_sector">
+                    <p class="board_title">게시판</p>
+                    <br>
+                    <a href="#">자유개시판</a>
+                    <br>
+                    <a href="#">공지게시판</a>
+                    <br>
+                    <a href="#">질문/답변 개시판</a>
+                </div>
+                <div id="proud" class="board_sector" >
+                    <p class="board_title">우리애 자랑하기</p>
+                    <br>
+                    <a href="#">우리 개는요~</a>
+                    <br>
+                    <a href="#">우리 고양이는요~</a>
+                    <br>
+                    <a href="#">우리 토끼는요~</a>
+                </div>
+            </div>
+            <div id="mid_mid">
+                <script>
+                    for (var i = 0; i < 17; i++) {
+                        const dog = document.createElement("img");
+                        dog.className = "mid_img_box"
+                        dog.src = "dog.png";
+                        document.getElementById("mid_mid").appendChild(dog);
+                    }
+                </script>
+            </div>
+            <div id="mid_right">
+                <div>
+                    <script>
+                        for (var i = 0; i < 5; i++) {
+                            const banner = document.createElement("img");
+                            banner.className = "right_banner"
+                            banner.src = "레플나라_470x150.gif";
+                            document.getElementById("mid_right").appendChild(banner);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div id="bot">
+            <p>copyright ㅇㅇㅇ회사. Tel 02-111-2222</p>
+            <p>개인정보책임자 안성모</p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+#box {
+    display: grid;   
+    grid-template-columns: repeat(8, 100px); 
+    grid-template-rows: repeat(8, 100px);
+
+    width: 1200px;
+    height: auto;
+
+    background-color: pink;
+}
+
+.ex {
+    width: 100px;
+    height: 100px;
+}
+
+.black {
+    background-color:black;
+}
+.white {
+    background-color:white;
+}

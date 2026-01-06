@@ -1,0 +1,13 @@
+/* tr, td {
+    border: 1px solid pink;
+} */
+tr, td {
+    border-style: dashed;
+    border-width: 3px;
+    border-color: red;
+}
+
+img {
+    width:100px;
+    height:100px;
+}
