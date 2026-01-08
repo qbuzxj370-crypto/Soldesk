@@ -1,0 +1,14 @@
+body {
+    display: flex;
+    background-color: cornflowerblue;
+    text-align: center;
+    justify-content: center;
+    align-items: center; 
+    font-size: 20pt;
+}
+#timer {
+    display: inline-block;   
+    margin: auto;
+    background: white;
+    padding: 10px;
+}
